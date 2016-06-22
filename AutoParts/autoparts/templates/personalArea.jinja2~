@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<style type="text/css">
+.buttonstyle{
+	width :100%;
+	padding: 8px 5px;
+	border: 1px solid;
+	border-color: gray;
+	border-radius: 5px;
+	cursor: pointer;	
+}
+
+.buttonstyle:hover {
+	background: gray;
+	border-color: black;
+}
+form{
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #0273dd;
+	border-color: black;
+	border-radius: 5px;
+}
+p{
+	padding: 0px 30%;
+}
+
+h1{
+	padding: 1% 30%;
+}
+</style>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<title>Registration</title>
+	</head>
+	<body>
+	<form action="/registration" method="post">
+		<h1> Личный кабинет</h1>
+		<p>
+			<label>Фамилия</label>
+			<input type="text" name="lastname" required="required" placeholder="Иванов"></p>
+		</p>
+		<p>
+			<label>Имя</label>
+			<input type="text" name="firstname"  required="required" placeholder="Иван"></p>
+		</p>
+		<p>
+			<label>Отчество</label>
+			<input type="text" name="middlename" placeholder="Иванович"></p>
+		</p>
+		<p>
+			<label>Пол </label>
+			<select name="sex" required="required">
+			<option value = True>Мужской</option>
+			<option value = False>Женский</option>
+			</select>
+		</p>
+		<p>
+			<label>Дата рождения</label>
+			<input type="text" name="bdate" required="required" placeholder="01.01.2015"></p>
+		<p> 
+		</p>
+		<p>
+			<label>Номер телефона</label>
+			<input type="text" name="phone" required="required" placeholder="8(800)555-35-35"></p>
+		</p>
+
+		<input class="buttonstyle" type="submit" value="update" />
+		<input class="buttonstyle" type="submit" value="back" />
+	</form>
+	</body>
+</html>

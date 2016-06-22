@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<style type="text/css">
+.buttonstyle{
+	width :100%;
+	padding: 8px 5px;
+	border: 1px solid;
+	border-color: gray;
+	border-radius: 5px;
+	cursor: pointer;	
+}
+
+.buttonstyle:hover {
+	background: gray;
+	border-color: black;
+}
+form{
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #0273dd;
+	border-color: black;
+	border-radius: 5px;
+}
+div{
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #0273dd;
+	border-color: black;
+	border-radius: 5px;
+}
+p{
+	padding: 0px 30%;
+}
+
+h1{
+	padding: 1% 30%;
+}
+</style>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<title>Lobby</title>
+	</head>
+	<body>
+	<form action="/lobby" method="post">
+	<p>
+		<h1>SUBARUTECNICA96</h1>
+	</p>
+	<p>
+		<lable name=user> Welcome user {{user.login}}</lable>
+	</p>
+		<input class="buttonstyle" type="button" value="РЕДАКТИРОВАНИЕ ПРОФИЛЯ" '/>
+		<input class="buttonstyle" type="submit" value="LOG OUT" onClick='location.href="registration"' />
+		<input class="buttonstyle" type="button" value="GO TO WAREHOUSE" onClick='location.href="warehouse"' />
+	</form>
+	</body>
+</html>

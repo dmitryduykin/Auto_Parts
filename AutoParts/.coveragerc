@@ -1,0 +1,3 @@
+[run]
+source = autoparts
+omit = autoparts/test*

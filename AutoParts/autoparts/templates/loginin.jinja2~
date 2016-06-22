@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<style type="text/css">
+.buttonstyle{
+	width :100%;
+	padding: 8px 5px;
+	border: 1px solid;
+	border-color: gray;
+	border-radius: 5px;
+	cursor: pointer;	
+}
+
+.buttonstyle:hover {
+	background: gray;
+	border-color: black;
+}
+form{
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #0273dd;
+	border-color: black;
+	border-radius: 5px;
+}
+p{
+	padding: 0px 30%;
+}
+
+h1{
+	padding: 1% 30%;
+}
+</style>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<title>Loginin</title>
+	</head>
+	<body>
+	<form action="/loginin" method="post">
+		<h1> Авторизация</h1>
+		<p>
+			<label>Login</label>
+			<input type="text" name="login" required="required" placeholder="kekovich"></p>
+		</p>
+		<p>
+			<label>Password</label>
+			<input type="password" name="password" placeholder="pappy"></p>
+		</p>
+
+		<input class="buttonstyle" type="submit" value="login in"/>
+		<input class="buttonstyle" type="button" value="registration" onClick='location.href="registration.jinja2"'/>
+	</from>
+	</body>
+</html>

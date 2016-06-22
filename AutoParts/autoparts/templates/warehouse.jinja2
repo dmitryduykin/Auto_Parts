@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<style type="text/css">
+.buttonstyle{
+	width :100%;
+	padding: 8px 5px;
+	border: 1px solid;
+	border-color: gray;
+	border-radius: 5px;
+	cursor: pointer;	
+}
+
+.buttonstyle:hover {
+	background: gray;
+	border-color: black;
+}
+form{
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #0273dd;
+	border-color: black;
+	border-radius: 5px;
+}
+p{
+	padding: 0px 30%;
+}
+
+h1{
+	padding: 1% 30%;
+}
+</style>
+		<meta charset="utf-8">
+		<title>Warehouse</title>
+	</head>
+	<body>
+	<form action="/warehouse" method="post">
+		<p>
+			<h1>SUBARUTECNICA96</h1>
+		</p>
+
+	<p>
+		<label name=username> Добро пожаловать username</label>
+	</p>
+	<p>
+		<label>Укажите модель вашего автомобиля:</label>
+		<select name="model">
+		{% for m in model %}
+		<option value="{{m.name}}"> {{m.name}}</option>
+		{% endfor %}
+		</select>
+	</p>	
+	
+	<p>
+		<label>Укажите модель кузов вашего автомобиля:</label>
+		<select name="body">
+		{% for b in body %}
+		<option value="{{b.name}}"> {{b.name}}</option>
+		{% endfor %}
+		</select>
+	</p>
+	
+	<p>
+		<label>Тип интересуемой запчасти:</label>
+		<select name="type">
+		{% for t in type %}
+		<option value="{{t.name}}"> {{t.name}}</option>
+		{% endfor %}
+		</select>
+	</p>
+	<p>
+		<label>Наименование детали:</label>
+		<select name="parts">
+		{% for p in parts %}
+		<option value="{{p.info}}"> {{p.info}}</option>
+		{% endfor %}
+		</select>	
+	</p>
+		<input class="buttonstyle" type="submit" value="НАЙТИ ЗАПЧАСТЬ" />
+	</form>
+		<!--<input class="buttonstyle" type="button" value="НАЗАД" onClick='location.href="/lobby" />-->
+	
+	<form method=POST action="/warehouse">		
+		<input class="buttonstyle" type="submit" value="ПОКАЗАТЬ ВСЕ ЗАПЧАСТИ НА СКЛАДЕ" />
+	</form>
+		<table border=1px margin=0 auto>
+			<tr>
+				<th width="10%">название</th>
+				<th width="20%">стоимость</th>
+				<th width="20%">наличииe</th>
+				<th width="10%">производитель</th>
+				<th width="10%">модель</th>
+				<th width="10%">тип</th>
+				<th width="10%">кузов</th>
+			</tr>
+			{% for part in allpart %}
+			<tr>
+				<td>{{part.part.info}}</td>
+				<td>{{part.part.price}}</td>
+				<td>{{part.part.available}}</td>
+				<td>{{part.man.name}}</td>
+				<td>{{part.model.name}}</td>
+				<td>{{part.type.name}}</td>
+				<td>{{part.body.name}}</td>
+				</tr>
+			{% endfor %}
+
+		</table>
+	
+		<input class="buttonstyle" type="button" value="НАЗАД" onClick='location.href="/lobby" />
+	</body>
+</html>
